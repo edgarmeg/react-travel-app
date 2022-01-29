@@ -2,6 +2,11 @@
   "name": "react-travel-website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.x"
+  },
+  
+  "homepage": "https://{edgarmeg}.github.io",
   "dependencies": {
     "@babel/core": "^7.16.12",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
@@ -27,6 +32,7 @@
     "eslint-webpack-plugin": "^3.1.1",
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.7",
@@ -48,6 +54,7 @@
     "resolve": "^1.22.0",
     "resolve-url-loader": "^5.0.0",
     "sass-loader": "^12.3.0",
+    "save-dev": "0.0.1-security",
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.1",
     "style-loader": "^3.3.1",
@@ -62,7 +69,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
